@@ -1,0 +1,143 @@
+/* Genel ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url("images/oyunfotokapak.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+/* Gradient karartma */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: 0;
+}
+
+/* Ana Menü Butonu */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 102, 0, 0.9);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: #cc5200;
+}
+
+.menu-btn .material-icons {
+  font-size: 20px;
+}
+
+/* Başlık */
+header {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #ccc;
+}
+
+/* Oyun kartları */
+.game-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.game-card {
+  background: #1e1e1e;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.game-card h2 {
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 102, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .game-card {
+    width: 45%;
+  }
+  .menu-btn {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Küçük ekranlar için başlık konumu */
+@media (max-width: 480px) {
+  header {
+    padding-top: 60px; /* Ana menü butonunun altından başlasın */
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .game-card {
+    width: 90%;
+  }
+
+  .menu-btn {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri | Bartu ÖZAŞÇI</title>
+    <link rel="stylesheet" href="z_galeri.css" />
+    <!-- Google Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Ana Menü Butonu -->
+    <a href="index.html" class="home-btn">
+      <span class="material-icons">menu</span> Ana Menü
+    </a>
+
+    <div class="container">
+      <h1>Fotoğraf Galerisi</h1>
+      <div class="gallery">
+        <!-- 16 örnek görsel -->
+        <div class="gallery-item">
+          <img src="images/galeri1.jpeg" alt="Galeri 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri2.jpeg" alt="Galeri 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri3.jpeg" alt="Galeri 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri4.jpeg" alt="Galeri 4" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri5.jpeg" alt="Galeri 5" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri15.jpeg" alt="Galeri 6" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri7.jpeg" alt="Galeri 7" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri8.jpeg" alt="Galeri 8" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri9.jpeg" alt="Galeri 9" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri10.jpeg" alt="Galeri 10" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri11.jpeg" alt="Galeri 11" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri12.jpeg" alt="Galeri 12" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri13.jpeg" alt="Galeri 13" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/galeri14.jpeg" alt="Galeri 14" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/yeniPP.jpeg" alt="Galeri 15" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/profilfoto.jpeg" alt="Galeri 16" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
+
+    <script>
+      // Lightbox açma
+      const galleryItems = document.querySelectorAll(".gallery-item img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".close");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = item.src;
+          lightboxImg.alt = item.alt;
+        });
+      });
+
+      // Lightbox kapatma
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      // Dışarı tıklayınca kapatma
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
